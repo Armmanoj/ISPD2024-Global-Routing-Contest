@@ -1,0 +1,10 @@
+CXX = g++
+CPPFILES = GRouter.cpp Parse.cpp Route.cpp
+EXECUTABLE = GRouter
+
+$(EXECUTABLE): GRouter.cpp Parse.cpp Route.cpp GRouter.h
+	$(CXX) $(CPPFILES) -o $(EXECUTABLE)
+run: $(EXECUTABLE) ../$(ARG)/$(ARG).cap ../$(ARG)/$(ARG).net
+	./$(EXECUTABLE) ../$(ARG)/$(ARG).cap ../$(ARG)/$(ARG).net ../$(ARG)/$(ARG).PR_output
+
+
